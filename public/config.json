@@ -16,11 +16,11 @@
         "execute": {
            "inArguments":[
 				{
-          "contactKey": "{{Contact.Key}}"	,
+          "contactKey": "{{Contact.Id}}"	,
           "FirstName": "{{Contact.Attribute.TestDE1.FirstName}}",
-              "LastName": "{{Contact.Attribute.TestDE1.LastName}}",
-              "Birthday": "{{Contact.Attribute.TestDE1.Birthday}}",
-              "Email": "{{Contact.Attribute.TestDE1.Email}}"
+          "LastName": "{{Contact.Attribute.TestDE1.LastName}}",
+          "Birthday": "{{Contact.Attribute.TestDE1.Birthday}}",
+          "Email": "{{Contact.Attribute.TestDE1.Email}}"
                 }									
 			],
           "outArguments": [],

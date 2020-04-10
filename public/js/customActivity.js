@@ -76,7 +76,7 @@ define([
     function init(){
         var value1 = payload.arguments.execute.inArguments[0].FirstName;
         console.log(`values are ${value1}`);
-        $('#setting1').val(value1);
+        //$('#firstname').val(value1);
     }
 
     function save() {
