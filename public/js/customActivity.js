@@ -84,6 +84,19 @@ define([
 
         connection.trigger('updateActivity', payload);
     }
+    function publish() {
+        payload['metaData'].isConfigured = true;
 
+        connection.trigger('updateActivity', payload);
+    }
+    function stop() {
+        payload['metaData'].isConfigured = true;
 
+        connection.trigger('updateActivity', payload);
+    }
+    function validate() {
+        payload['metaData'].isConfigured = true;
+
+        connection.trigger('updateActivity', payload);
+    }
 });
