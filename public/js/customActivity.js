@@ -73,19 +73,17 @@ define([
     function showStep(step, stepIndex) {
     }
 
+    function init(){
+        var value1 = payload.arguments.execute.inArguments[0].FirstName;
+        console.log(`values are ${value1}`);
+        $('#setting1').val(value1);
+    }
+
     function save() {
         payload['metaData'].isConfigured = true;
 
         connection.trigger('updateActivity', payload);
     }
 
-    // -----------------------------------
-    function init() {
-        // 設定画面の初期表示 ※設定値はconfig.jsonで定義しておく
-        var value1 = payload.arguments.execute.inArguments[0].FirstName;
-        console.log(`values are ${value1});
-        
-        $('#setting1').val(value1);
 
-    }
 });
