@@ -8,6 +8,10 @@ define([
     var connection = new Postmonger.Session();
     var payload = {};
 
+    var steps = [ // initialize to the same value as what's set in config.json for consistency
+    { "label": "Step 1", "key": "step1" }
+    ];
+
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
@@ -22,18 +26,17 @@ define([
 
     function onRender() {
         connection.trigger('ready'); // JB will respond the first time 'ready' is called with 'initActivity'
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
         connection.trigger('requestSchema');
         connection.trigger('requestCulture');
-
-
     }
 
     function initialize (data) {
+        console.log("initialize is called.");
         if (data) {
             payload = data;
+            init();
         }
     }
 
@@ -74,29 +77,21 @@ define([
     }
 
     function init(){
-        var value1 = payload.arguments.execute.inArguments[0].FirstName;
-        console.log(`values are ${value1}`);
+        //var value1 = payload.arguments.execute.inArguments[0].FirstName;
+        //console.log(`values are ${value1}`);
         //$('#firstname').val(value1);
     }
 
     function save() {
-        payload['metaData'].isConfigured = true;
 
-        connection.trigger('updateActivity', payload);
     }
     function publish() {
-        payload['metaData'].isConfigured = true;
 
-        connection.trigger('updateActivity', payload);
     }
     function stop() {
-        payload['metaData'].isConfigured = true;
 
-        connection.trigger('updateActivity', payload);
     }
     function validate() {
-        payload['metaData'].isConfigured = true;
 
-        connection.trigger('updateActivity', payload);
     }
 });
